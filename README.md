@@ -1,10 +1,9 @@
 # Schrodinger
-Schrodinger tools
 
-## requirements
+- wrappers for Schrodinger tools
+- requires proper installation of Schrodinger Suites
 
-Schrodinger Python API is required for python scripts
-
+## example
 
 ```
 $ $SCHRODINGER/run batch-desmond-setup.py --help
@@ -40,4 +39,30 @@ optional arguments:
                         msj filename (default: desmond_setup_1.msj)
   -a APPENDIX, --appendix APPENDIX
                         job name appendix (default: )
+                        
+$SCHRODINGER/run batch-desmond-md.py --help
+usage: batch-desmond-md.py [-h] [-g gpu_device] [-T temperature [temperature ...]] [-R tempramp [tempramp ...]]
+                           [-t simulation_time [simulation_time ...]] [-i interval] [-p PREFIX] [-s START] [-r REPEAT]
+                           [-j JOB_FILE]
+                           cms [cms ...]
+
+batch gdesmond md jobs
+
+positional arguments:
+  cms                   desmond cms file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -g gpu_device         gpu device id (default: 0)
+  -T temperature [temperature ...]
+                        temperature in K (default: [300.0])
+  -R tempramp [tempramp ...]
+                        heat and cool ramps in ps/K (default: [10.0])
+  -t simulation_time [simulation_time ...]
+                        simulation time in ns (default: [100.0])
+  -i interval           frame interval in ps (default: 100.0)
+  -p PREFIX             directory prefix (default: r)
+  -s START              directory start (default: 1)
+  -r REPEAT             number of repeats (default: 1)
+  -j JOB_FILE           job filename (default: desmond_md_job_1.sh)
 ```
